@@ -1,0 +1,65 @@
+{
+  "name": "clockify-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Remote-first MCP server and ChatGPT app for personal Clockify time tracking.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:migrate:prod": "node dist/src/db/migrate.js",
+    "dev": "tsx watch --env-file-if-exists=.env src/server/index.ts",
+    "start": "node dist/src/server/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "verify": "npm test && npm run typecheck && npm run lint && npm run build",
+    "readiness": "tsx src/readiness/index.ts",
+    "smoke:deployed": "tsx src/readiness/deployed-smoke-cli.ts"
+  },
+  "keywords": [
+    "mcp",
+    "clockify",
+    "chatgpt-app",
+    "time-tracking"
+  ],
+  "files": [
+    "dist/src",
+    "dist/package.json",
+    "dist/server.json",
+    "src/db/migrations",
+    "server.json",
+    "README.md",
+    "LICENSE",
+    "PRIVACY.md",
+    "TERMS.md",
+    "SECURITY.md"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/formbody": "^8.0.2",
+    "@fastify/helmet": "^13.0.2",
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "fastify": "^5.4.0",
+    "jose": "^6.0.13",
+    "nanoid": "^5.1.5",
+    "pg": "^8.16.3",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "eslint": "^9.33.0",
+    "globals": "^17.7.0",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.62.1",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "cc.velryx/clockify-mcp",
+  "title": "Clockify MCP",
+  "description": "Remote MCP server for personal Clockify time tracking through ChatGPT and other MCP clients.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/velryx/clockify-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://clockify.velryx.cc/mcp"
+    }
+  ]
+}
