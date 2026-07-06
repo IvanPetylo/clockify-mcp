@@ -88,7 +88,7 @@ Already covered in tests:
 
 - Publish source to GitHub first.
 - Registry namespace: `cc.velryx/clockify-mcp`.
-- Repository URL: `https://github.com/velryx/clockify-mcp`.
+- Repository URL: `https://github.com/IvanPetylo/clockify-mcp`.
 - Remote endpoint: `https://clockify.velryx.cc/mcp`.
 - Keep `server.json` aligned with the current MCP Registry schema and the deployed Streamable HTTP `/mcp` endpoint.
 - Treat `server.json.name` as the MCP Registry ownership name. Runtime MCP `serverInfo.name` remains the package/runtime identifier from `package.json`; keep versions and public title/description aligned between both surfaces.

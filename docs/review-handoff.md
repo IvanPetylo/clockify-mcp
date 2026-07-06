@@ -12,7 +12,7 @@
 
 ## Repository And Registry
 
-- Repository: `https://github.com/velryx/clockify-mcp`
+- Repository: `https://github.com/IvanPetylo/clockify-mcp`
 - MCP Registry namespace: `cc.velryx/clockify-mcp`
 - Runtime package name: `clockify-mcp`
 - Version: `0.1.0`

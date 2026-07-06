@@ -7,7 +7,7 @@ ClockifyMCP can proceed to deployment validation after these owner decisions are
 | Decision | Decision Value | Owner | Decision Date | Evidence | Accepted Values |
 | --- | --- | --- | --- | --- | --- |
 | Public domain and HTTPS host | https://clockify.velryx.cc | Ivan Petylo | 2026-07-06 | https://clockify.velryx.cc/evidence/domain-2026-07-06.md | Concrete public origin |
-| GitHub repository URL | https://github.com/velryx/clockify-mcp | Ivan Petylo | 2026-07-06 | https://github.com/velryx/clockify-mcp | Public or reviewer-accessible repository URL |
+| GitHub repository URL | https://github.com/IvanPetylo/clockify-mcp | Ivan Petylo | 2026-07-06 | https://github.com/IvanPetylo/clockify-mcp | Public or reviewer-accessible repository URL |
 | MCP Registry namespace | cc.velryx/clockify-mcp | Ivan Petylo | 2026-07-06 | https://clockify.velryx.cc/evidence/mcp-namespace-2026-07-06.md | Final `server.json.name` value |
 | Support contact | petylo.work+mcp@gmail.com | Ivan Petylo | 2026-07-06 | https://clockify.velryx.cc/evidence/support-contact-2026-07-06.md | Real monitored support email or help URL |
 | Security contact | petylo.work+mcp@gmail.com | Ivan Petylo | 2026-07-06 | https://clockify.velryx.cc/evidence/security-contact-2026-07-06.md | Real monitored security email or policy URL |
