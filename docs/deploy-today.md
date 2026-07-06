@@ -19,18 +19,19 @@ nslookup clockify.velryx.cc
 curl -i https://clockify.velryx.cc/healthz
 ```
 
-## 1. Create Production Secrets
+## 1. Fast GHCR Deploy Path
 
 ```bash
-node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
-node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"
+git clone https://github.com/IvanPetylo/clockify-mcp.git
+cd clockify-mcp
+OAUTH_ALLOWED_REDIRECT_URIS="https://chatgpt.com/connector/oauth/<callback_id>" sh deploy/bootstrap-ghcr.sh
 ```
 
-Use the first value for `CLOCKIFY_CREDENTIAL_ENCRYPTION_KEY` and the second value for `OAUTH_JWT_SECRET`.
+This path requires Docker Compose and `openssl` on the server. It generates `.env.production`, pulls `ghcr.io/ivanpetylo/clockify-mcp:v0.1.0-rc.1`, starts Postgres, applies migrations, and starts the app on `127.0.0.1:3000`.
 
 ## 2. Required Environment
 
-Start from `.env.production.example`:
+If you prefer to prepare the environment manually or from a machine with Node.js 22+, start from `.env.production.example`:
 
 ```bash
 npm run env:production
@@ -57,7 +58,7 @@ Replace `OAUTH_ALLOWED_REDIRECT_URIS` with the exact callback URI shown by ChatG
 
 Keep `PGSSLMODE=` for the bundled `compose.production.example.yml` Postgres container. For a managed external Postgres with TLS, set `PGSSLMODE=require` or `PGSSLMODE=verify-full` as appropriate for that provider.
 
-## 3. Apply Database Migration
+## 3. Apply Database Migration Manually
 
 After `npm run build`:
 
@@ -85,7 +86,7 @@ docker compose -f compose.production.example.yml --env-file .env.production up -
 docker compose -f compose.production.example.yml --env-file .env.production run --rm app npm run db:migrate:prod
 ```
 
-## 4. Build And Start
+## 4. Build And Start Manually
 
 ```bash
 npm ci
