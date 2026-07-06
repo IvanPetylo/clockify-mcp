@@ -13,6 +13,8 @@
 ## Repository And Registry
 
 - Repository: `https://github.com/IvanPetylo/clockify-mcp`
+- GHCR image: `ghcr.io/ivanpetylo/clockify-mcp:v0.1.0-rc.1`
+- Release candidate commit: `bba429e34aad60e7e6e52699308b4196517c0bb5`
 - MCP Registry namespace: `cc.velryx/clockify-mcp`
 - Runtime package name: `clockify-mcp`
 - Version: `0.1.0`
