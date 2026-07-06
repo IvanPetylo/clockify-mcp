@@ -149,6 +149,8 @@ For metadata-only staging environments without a linked Clockify credential, use
 
 Use the `SMOKE_OUTPUT_JSON` output from the `MCP_ACCESS_TOKEN` run as the deployed smoke release evidence artifact. The artifact records the checked URLs and pass/fail/skip results, but never the bearer token, tool response payload, profile email, or workspace names.
 
+For a faster VPS-only sanity check without Node.js, run `sh deploy/validate-live.sh` and optionally set `MCP_ACCESS_TOKEN`. This writes sanitized public metadata and a curl-based smoke summary to `/var/www/clockify-mcp/evidence`; prefer the `SMOKE_OUTPUT_JSON` artifact for final marketplace evidence when Node.js is available.
+
 - MCP Inspector against the production `/mcp` URL.
 - ChatGPT developer-mode account linking with the exact production callback URI in `OAUTH_ALLOWED_REDIRECT_URIS`.
 - Golden prompts from `docs/golden-prompts.md`, including profile lookup, entity search, current timer, list entries, start/stop timer, create/update entry, delete confirmation, report summary, a negative non-trigger prompt, and prompt-injection resistance.

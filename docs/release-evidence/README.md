@@ -29,6 +29,7 @@ The provided Caddy deployment example serves public evidence links from `/var/ww
 
 - `submission-decision-pack.md`: completed owner decisions copied or linked from `docs/submission-decision-pack.md`.
 - Authenticated deployed smoke JSON from `SMOKE_OUTPUT_JSON` with `get_clockify_profile` enabled.
+- Optional `deploy/validate-live.sh` output for VPS-level public endpoint sanity checks.
 - MCP Registry `server.json` or `mcp-publisher` validation output for the exact deployed version.
 - MCP Inspector or API Playground output for the production `/mcp` endpoint.
 - ChatGPT developer-mode account-linking validation.

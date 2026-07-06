@@ -172,9 +172,13 @@ SMOKE_OUTPUT_JSON="./artifacts/deployed-smoke.json" MCP_BASE_URL="https://clocki
 Publish sanitized evidence after validation:
 
 ```bash
+sudo env PUBLIC_BASE_URL="https://clockify.velryx.cc" sh deploy/validate-live.sh
+sudo env PUBLIC_BASE_URL="https://clockify.velryx.cc" MCP_ACCESS_TOKEN="<linked-oauth-access-token>" sh deploy/validate-live.sh
 sudo cp ./artifacts/deployed-smoke.json /var/www/clockify-mcp/evidence/deployed-smoke-2026-07-06.json
 sudo cp ./server.json /var/www/clockify-mcp/evidence/server-json-2026-07-06.json
 ```
+
+The `validate-live.sh` path writes sanitized public metadata and a smoke summary into `/var/www/clockify-mcp/evidence` without saving bearer tokens, raw headers, or raw MCP tool payloads. If you also run `npm run smoke:deployed` with `SMOKE_OUTPUT_JSON`, publish that JSON instead of the curl-based summary.
 
 ## 7. Evidence Still Needed
 
