@@ -33,7 +33,7 @@ Use the first value for `CLOCKIFY_CREDENTIAL_ENCRYPTION_KEY` and the second valu
 Start from `.env.production.example`:
 
 ```bash
-cp .env.production.example .env.production
+npm run env:production
 ```
 
 ```bash
@@ -41,6 +41,7 @@ NODE_ENV=production
 PORT=3000
 PUBLIC_BASE_URL=https://clockify.velryx.cc
 TRUST_PROXY_HOPS=1
+POSTGRES_PASSWORD=...
 DATABASE_URL=postgres://...
 PGSSLMODE=
 CLOCKIFY_CREDENTIAL_ENCRYPTION_KEY=...

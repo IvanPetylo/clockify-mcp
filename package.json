@@ -12,6 +12,7 @@
     "db:migrate": "tsx src/db/migrate.ts",
     "db:migrate:prod": "node dist/src/db/migrate.js",
     "dev": "tsx watch --env-file-if-exists=.env src/server/index.ts",
+    "env:production": "node scripts/generate-production-env.mjs",
     "start": "node dist/src/server/index.js",
     "test": "vitest run",
     "test:watch": "vitest",
