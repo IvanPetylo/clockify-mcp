@@ -48,7 +48,7 @@ Fill these lines only after validating the deployed production candidate. Keep l
 
 Current status: deployment candidate.
 Production endpoint: https://clockify.velryx.cc/mcp
-Source commit: bba429e34aad60e7e6e52699308b4196517c0bb5
+Source commit: pending deployed validation against `v0.1.0-rc.1`
 MCP Inspector: pending
 MCP Inspector run date: pending
 MCP Inspector artifact: https://clockify.velryx.cc/evidence/mcp-inspector-2026-07-06.md
