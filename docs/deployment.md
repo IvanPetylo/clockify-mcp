@@ -95,7 +95,7 @@ The public origin must preserve these paths:
 
 Require HTTPS at the edge. Do not cache OAuth, onboarding, or MCP POST responses.
 
-`deploy/Caddyfile.example` contains a ready-to-adapt Caddy reverse-proxy configuration for `clockify.velryx.cc`.
+`deploy/Caddyfile.example` contains a ready-to-adapt Caddy reverse-proxy configuration for `clockify.velryx.cc`. It also serves sanitized release-review artifacts from `/var/www/clockify-mcp/evidence` at `/evidence/*` so the evidence links recorded in `docs/marketplace-readiness.md` have a stable public home.
 
 ## Disconnect And Data Deletion
 

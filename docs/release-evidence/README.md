@@ -23,6 +23,8 @@ Use `docs/golden-prompts.md` for ChatGPT developer-mode prompt coverage and `doc
 - Upload only sanitized artifacts to stable links, then record those links in `docs/marketplace-readiness.md`.
 - `npm run readiness` should keep failing until the stable evidence URLs and live validation PASS statuses are recorded.
 
+The provided Caddy deployment example serves public evidence links from `/var/www/clockify-mcp/evidence` at `https://clockify.velryx.cc/evidence/...`.
+
 ## Required Evidence
 
 - `submission-decision-pack.md`: completed owner decisions copied or linked from `docs/submission-decision-pack.md`.

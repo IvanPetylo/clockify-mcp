@@ -1,11 +1,18 @@
 clockify.velryx.cc {
   encode zstd gzip
 
-  reverse_proxy 127.0.0.1:3000 {
-    header_up Host {host}
-    header_up X-Forwarded-Host {host}
-    header_up X-Forwarded-Proto {scheme}
-    header_up X-Forwarded-For {remote_host}
+  handle_path /evidence/* {
+    root * /var/www/clockify-mcp/evidence
+    file_server
+  }
+
+  handle {
+    reverse_proxy 127.0.0.1:3000 {
+      header_up Host {host}
+      header_up X-Forwarded-Host {host}
+      header_up X-Forwarded-Proto {scheme}
+      header_up X-Forwarded-For {remote_host}
+    }
   }
 
   header {

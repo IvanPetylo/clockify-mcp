@@ -141,10 +141,14 @@ Use `/readyz` as the readiness check.
 Caddy example:
 
 ```bash
+sudo mkdir -p /var/www/clockify-mcp/evidence
+sudo chown -R caddy:caddy /var/www/clockify-mcp/evidence || true
 sudo cp deploy/Caddyfile.example /etc/caddy/Caddyfile
 sudo caddy validate --config /etc/caddy/Caddyfile
 sudo systemctl reload caddy
 ```
+
+The Caddy example serves sanitized review artifacts from `/var/www/clockify-mcp/evidence` at `https://clockify.velryx.cc/evidence/...`. Do not place bearer tokens, Clockify API keys, OAuth codes, raw request headers, raw MCP tool payloads, profile emails, or private workspace/member data in that directory.
 
 ## 6. Smoke Checks
 
@@ -163,6 +167,13 @@ After ChatGPT account linking gives you an MCP bearer token:
 
 ```bash
 SMOKE_OUTPUT_JSON="./artifacts/deployed-smoke.json" MCP_BASE_URL="https://clockify.velryx.cc" MCP_ACCESS_TOKEN="<linked-oauth-access-token>" npm run smoke:deployed
+```
+
+Publish sanitized evidence after validation:
+
+```bash
+sudo cp ./artifacts/deployed-smoke.json /var/www/clockify-mcp/evidence/deployed-smoke-2026-07-06.json
+sudo cp ./server.json /var/www/clockify-mcp/evidence/server-json-2026-07-06.json
 ```
 
 ## 7. Evidence Still Needed
