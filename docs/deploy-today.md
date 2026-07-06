@@ -107,6 +107,17 @@ docker pull ghcr.io/ivanpetylo/clockify-mcp:v0.1.0-rc.1
 docker run --env-file .env.production -p 127.0.0.1:3000:3000 ghcr.io/ivanpetylo/clockify-mcp:v0.1.0-rc.1
 ```
 
+If GHCR package visibility is not public yet, run `docker login ghcr.io` on the server with a token that can read packages.
+
+GHCR Docker Compose path:
+
+```bash
+docker compose -f compose.ghcr.example.yml --env-file .env.production pull
+docker compose -f compose.ghcr.example.yml --env-file .env.production up -d postgres
+docker compose -f compose.ghcr.example.yml --env-file .env.production run --rm app npm run db:migrate:prod
+docker compose -f compose.ghcr.example.yml --env-file .env.production up -d
+```
+
 Docker Compose path:
 
 ```bash
