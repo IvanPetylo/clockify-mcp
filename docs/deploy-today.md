@@ -3,6 +3,7 @@
 Target origin: `https://clockify.velryx.cc`
 
 Reviewer summary: `docs/review-handoff.md`
+Reviewer packet: `docs/review-packet.md`
 
 ## 0. DNS Prerequisite
 

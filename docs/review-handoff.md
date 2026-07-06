@@ -9,6 +9,7 @@
 - Terms: `https://clockify.velryx.cc/terms`
 - Support: Ivan Petylo, petylo.work+mcp@gmail.com, Telegram: @edwy_reed
 - Security contact: petylo.work+mcp@gmail.com
+- Review packet: `docs/review-packet.md`
 
 ## Repository And Registry
 
