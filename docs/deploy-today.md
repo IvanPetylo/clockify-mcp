@@ -100,6 +100,13 @@ docker build -t clockify-mcp:0.1.0 .
 docker run --env-file .env.production -p 3000:3000 clockify-mcp:0.1.0
 ```
 
+GHCR image path after `v0.1.0-rc.1` is published:
+
+```bash
+docker pull ghcr.io/ivanpetylo/clockify-mcp:v0.1.0-rc.1
+docker run --env-file .env.production -p 127.0.0.1:3000:3000 ghcr.io/ivanpetylo/clockify-mcp:v0.1.0-rc.1
+```
+
 Docker Compose path:
 
 ```bash
